@@ -120,10 +120,10 @@ export default function Roulette({ balance, setBalance }: RouletteProps) {
 
   return (
     <div className="space-y-6">
-      <Card className="border-gold/30 bg-card/50 backdrop-blur-sm">
+      <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-2xl slide-up-animation hover-glow">
         <CardHeader>
           <CardTitle className="text-3xl flex items-center gap-2">
-            <Icon name="CircleDot" size={32} className="text-primary" />
+            <Icon name="CircleDot" size={32} className="text-primary pulse-glow-animation" />
             Классическая рулетка
           </CardTitle>
           <CardDescription className="text-lg">
@@ -134,7 +134,7 @@ export default function Roulette({ balance, setBalance }: RouletteProps) {
           <div className="flex justify-center">
             <div className="relative w-80 h-80">
               <div 
-                className="absolute inset-0 rounded-full border-8 border-gold shadow-2xl shadow-primary/50 overflow-hidden"
+                className="absolute inset-0 rounded-full border-8 border-gold shadow-2xl glow-effect overflow-hidden"
                 style={{
                   transform: `rotate(${rotation}deg)`,
                   transition: spinning ? 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)' : 'none'
@@ -170,7 +170,7 @@ export default function Roulette({ balance, setBalance }: RouletteProps) {
               </div>
 
               <div className="absolute inset-0 rounded-full flex items-center justify-center pointer-events-none">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/60 shadow-2xl pulse-glow-animation flex items-center justify-center">
                   <Icon name="Crown" size={32} className="text-primary-foreground" />
                 </div>
               </div>
@@ -178,10 +178,10 @@ export default function Roulette({ balance, setBalance }: RouletteProps) {
           </div>
 
           {result && !spinning && (
-            <Card className="border-gold/50 bg-gradient-to-br from-card to-card/50 animate-fade-in">
+            <Card className="border-gold/50 bg-black/80 backdrop-blur-md glow-effect slide-up-animation">
               <CardContent className="py-4 text-center">
                 <p className="text-lg font-semibold">
-                  Выпало: <span className="text-2xl text-gold">{result.num}</span>
+                  Выпало: <span className="text-2xl text-gold shine-effect">{result.num}</span>
                 </p>
                 <p className={`text-sm ${
                   result.color === 'red' ? 'text-red-400' : 
@@ -270,7 +270,7 @@ export default function Roulette({ balance, setBalance }: RouletteProps) {
               onClick={handleSpin}
               disabled={spinning || !selectedBet}
               size="lg"
-              className="w-full h-14 text-xl font-bold bg-gradient-to-r from-primary via-primary/90 to-secondary hover:shadow-lg hover:shadow-primary/50 transition-all disabled:opacity-50"
+              className="w-full h-14 text-xl font-bold bg-gradient-to-r from-primary via-primary/90 to-primary/80 hover:glow-effect transition-all disabled:opacity-50 shadow-2xl"
             >
               {spinning ? (
                 <>

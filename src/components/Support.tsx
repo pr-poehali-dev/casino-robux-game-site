@@ -31,7 +31,7 @@ export default function Support() {
 
   return (
     <div className="space-y-6">
-      <Card className="border-gold/30 bg-card/50 backdrop-blur-sm">
+      <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-2xl slide-up-animation hover-glow">
         <CardHeader>
           <CardTitle className="text-3xl flex items-center gap-2">
             <Icon name="MessageCircle" size={32} className="text-primary" />
@@ -81,7 +81,7 @@ export default function Support() {
             <Button 
               type="submit"
               size="lg"
-              className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 transition-all"
+              className="w-full bg-gradient-to-r from-primary to-primary/80 hover:glow-effect transition-all shadow-xl"
             >
               <Icon name="Send" size={20} className="mr-2" />
               Отправить сообщение
@@ -91,7 +91,7 @@ export default function Support() {
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="border-gold/30 bg-card/50 backdrop-blur-sm hover:border-gold/50 transition-all">
+        <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-xl hover-glow slide-up-animation">
           <CardHeader>
             <Icon name="Mail" size={32} className="text-primary mb-2" />
             <CardTitle>Email</CardTitle>
@@ -102,7 +102,7 @@ export default function Support() {
           </CardContent>
         </Card>
 
-        <Card className="border-gold/30 bg-card/50 backdrop-blur-sm hover:border-gold/50 transition-all">
+        <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-xl hover-glow slide-up-animation animate-delay-100">
           <CardHeader>
             <Icon name="MessageSquare" size={32} className="text-primary mb-2" />
             <CardTitle>Telegram</CardTitle>
@@ -113,7 +113,7 @@ export default function Support() {
           </CardContent>
         </Card>
 
-        <Card className="border-gold/30 bg-card/50 backdrop-blur-sm hover:border-gold/50 transition-all">
+        <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-xl hover-glow slide-up-animation animate-delay-100">
           <CardHeader>
             <Icon name="Clock" size={32} className="text-primary mb-2" />
             <CardTitle>Часы работы</CardTitle>
@@ -125,7 +125,7 @@ export default function Support() {
         </Card>
       </div>
 
-      <Card className="border-gold/30 bg-card/50 backdrop-blur-sm">
+      <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-2xl slide-up-animation hover-glow">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Icon name="HelpCircle" size={24} className="text-primary" />

@@ -5,7 +5,7 @@ import Icon from '@/components/ui/icon';
 export default function Rules() {
   return (
     <div className="space-y-6">
-      <Card className="border-gold/30 bg-card/50 backdrop-blur-sm">
+      <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-2xl slide-up-animation hover-glow">
         <CardHeader>
           <CardTitle className="text-3xl flex items-center gap-2">
             <Icon name="BookOpen" size={32} className="text-primary" />
@@ -17,7 +17,7 @@ export default function Rules() {
         </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="space-y-3">
-            <AccordionItem value="roulette" className="border border-gold/20 rounded-lg px-4 bg-card/30">
+            <AccordionItem value="roulette" className="border border-gold/30 rounded-lg px-4 bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                 <div className="flex items-center gap-2">
                   <Icon name="CircleDot" size={20} className="text-primary" />
@@ -40,7 +40,7 @@ export default function Rules() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="bets" className="border border-gold/20 rounded-lg px-4 bg-card/30">
+            <AccordionItem value="bets" className="border border-gold/30 rounded-lg px-4 bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                 <div className="flex items-center gap-2">
                   <Icon name="Coins" size={20} className="text-primary" />
@@ -58,7 +58,7 @@ export default function Rules() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="fair" className="border border-gold/20 rounded-lg px-4 bg-card/30">
+            <AccordionItem value="fair" className="border border-gold/30 rounded-lg px-4 bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                 <div className="flex items-center gap-2">
                   <Icon name="Shield" size={20} className="text-primary" />
@@ -77,7 +77,7 @@ export default function Rules() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="responsible" className="border border-gold/20 rounded-lg px-4 bg-card/30">
+            <AccordionItem value="responsible" className="border border-gold/30 rounded-lg px-4 bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                 <div className="flex items-center gap-2">
                   <Icon name="Heart" size={20} className="text-primary" />
@@ -97,7 +97,7 @@ export default function Rules() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="terms" className="border border-gold/20 rounded-lg px-4 bg-card/30">
+            <AccordionItem value="terms" className="border border-gold/30 rounded-lg px-4 bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                 <div className="flex items-center gap-2">
                   <Icon name="FileText" size={20} className="text-primary" />
@@ -120,10 +120,10 @@ export default function Rules() {
         </CardContent>
       </Card>
 
-      <Card className="border-gold/30 bg-gradient-to-br from-card/50 to-primary/5 backdrop-blur-sm">
+      <Card className="border-gold/40 bg-gradient-to-br from-black/80 to-primary/10 backdrop-blur-md shadow-xl slide-up-animation glow-effect">
         <CardContent className="py-6">
           <div className="flex items-start gap-4">
-            <Icon name="Info" size={32} className="text-primary flex-shrink-0" />
+            <Icon name="Info" size={32} className="text-primary flex-shrink-0 pulse-glow-animation" />
             <div>
               <h3 className="text-lg font-semibold mb-2">Важная информация</h3>
               <p className="text-muted-foreground">
