@@ -8,13 +8,22 @@ import Profile from '@/components/Profile';
 import Rules from '@/components/Rules';
 import Support from '@/components/Support';
 
+interface GameStats {
+  totalBets: number;
+  biggestWin: number;
+  totalWins: number;
+  totalLosses: number;
+}
+
 interface CasinoPageProps {
   balance: number;
   setBalance: (balance: number) => void;
   onLogout: () => void;
+  gameStats: GameStats;
+  setGameStats: (stats: GameStats) => void;
 }
 
-export default function CasinoPage({ balance, setBalance, onLogout }: CasinoPageProps) {
+export default function CasinoPage({ balance, setBalance, onLogout, gameStats, setGameStats }: CasinoPageProps) {
   const [activeTab, setActiveTab] = useState('home');
 
   return (
@@ -137,11 +146,11 @@ export default function CasinoPage({ balance, setBalance, onLogout }: CasinoPage
           </TabsContent>
 
           <TabsContent value="games">
-            <Roulette balance={balance} setBalance={setBalance} />
+            <Roulette balance={balance} setBalance={setBalance} gameStats={gameStats} setGameStats={setGameStats} />
           </TabsContent>
 
           <TabsContent value="profile">
-            <Profile balance={balance} />
+            <Profile balance={balance} gameStats={gameStats} />
           </TabsContent>
 
           <TabsContent value="rules">

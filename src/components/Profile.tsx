@@ -2,11 +2,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
-interface ProfileProps {
-  balance: number;
+interface GameStats {
+  totalBets: number;
+  biggestWin: number;
+  totalWins: number;
+  totalLosses: number;
 }
 
-export default function Profile({ balance }: ProfileProps) {
+interface ProfileProps {
+  balance: number;
+  gameStats: GameStats;
+}
+
+export default function Profile({ balance, gameStats }: ProfileProps) {
   return (
     <div className="space-y-6">
       <Card className="border-gold/40 bg-black/70 backdrop-blur-md shadow-2xl slide-up-animation hover-glow">
@@ -60,7 +68,7 @@ export default function Profile({ balance }: ProfileProps) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-bold">0</p>
+            <p className="text-3xl font-bold">{gameStats.totalBets}</p>
             <p className="text-sm text-muted-foreground mt-1">игр сыграно</p>
           </CardContent>
         </Card>
@@ -73,7 +81,7 @@ export default function Profile({ balance }: ProfileProps) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-bold">0</p>
+            <p className="text-3xl font-bold">{gameStats.biggestWin}</p>
             <p className="text-sm text-muted-foreground mt-1">робуксов</p>
           </CardContent>
         </Card>
@@ -95,19 +103,31 @@ export default function Profile({ balance }: ProfileProps) {
             </div>
           </div>
           
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/5 border border-muted/20 opacity-50">
-            <Icon name="Flame" size={32} className="text-muted-foreground" />
+          <div className={`flex items-center gap-3 p-3 rounded-lg ${
+            gameStats.totalWins > 0 
+              ? 'bg-primary/10 border border-gold/30 glow-effect' 
+              : 'bg-muted/5 border border-muted/20 opacity-50'
+          }`}>
+            <Icon name="Flame" size={32} className={gameStats.totalWins > 0 ? 'text-primary float-animation' : 'text-muted-foreground'} />
             <div>
-              <p className="font-semibold text-muted-foreground">Первая победа</p>
-              <p className="text-sm text-muted-foreground">Выиграйте первую игру</p>
+              <p className={`font-semibold ${gameStats.totalWins > 0 ? '' : 'text-muted-foreground'}`}>Первая победа</p>
+              <p className="text-sm text-muted-foreground">
+                {gameStats.totalWins > 0 ? `Побед: ${gameStats.totalWins}` : 'Выиграйте первую игру'}
+              </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/5 border border-muted/20 opacity-50">
-            <Icon name="Target" size={32} className="text-muted-foreground" />
+          <div className={`flex items-center gap-3 p-3 rounded-lg ${
+            gameStats.totalBets >= 10 
+              ? 'bg-primary/10 border border-gold/30 glow-effect' 
+              : 'bg-muted/5 border border-muted/20 opacity-50'
+          }`}>
+            <Icon name="Target" size={32} className={gameStats.totalBets >= 10 ? 'text-primary float-animation' : 'text-muted-foreground'} />
             <div>
-              <p className="font-semibold text-muted-foreground">Точный выстрел</p>
-              <p className="text-sm text-muted-foreground">Угадайте точное число</p>
+              <p className={`font-semibold ${gameStats.totalBets >= 10 ? '' : 'text-muted-foreground'}`}>Опытный игрок</p>
+              <p className="text-sm text-muted-foreground">
+                {gameStats.totalBets >= 10 ? 'Сделано 10+ ставок' : 'Сделайте 10 ставок'}
+              </p>
             </div>
           </div>
         </CardContent>
